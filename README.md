@@ -1,11 +1,15 @@
 # JSON++
 
-[![Build Status](https://travis-ci.org/hjiang/jsonxx.svg?branch=master)](https://travis-ci.org/hjiang/jsonxx)
-
 ## Introduction
 
 JSON++ is a light-weight JSON parser, writer and reader written in C++.
 JSON++ can also convert JSON documents into lossless XML documents.
+
+## Compile for PSVITA
+
+$make -f Makefile.psp2
+
+$make -f Makefile.psp2 install
 
 ## Contributors
 
