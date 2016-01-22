@@ -1,0 +1,32 @@
+#
+# Copyright (c) 2015 Sergi Granell (xerpi)
+# based on Cirne's vita-toolchain test Makefile
+#
+# edited for notengine
+#
+
+TARGET_LIB = libjsonxx.a
+
+OBJS       = jsonxx.o
+
+PREFIX  = arm-vita-eabi
+CC      = $(PREFIX)-gcc
+CXX 	= $(PREFIX)-g++
+AR      = $(PREFIX)-ar
+STRIP   = $(PREFIX)-strip
+
+# Enabling -O3 here make further usage of vita-elf-create to fail. Disabled for this lib.
+CXXFLAGS += -Werror -Wall -g
+
+all: $(TARGET_LIB)
+
+$(TARGET_LIB): $(OBJS)
+	$(AR) -rc $@ $^
+
+clean:
+	@rm -rf $(TARGET_LIB) $(OBJS)
+
+install: $(TARGET_LIB)
+	@cp $(TARGET_LIB) $(VITASDK)/arm-vita-eabi/lib
+	@cp -R jsonxx.h $(VITASDK)/arm-vita-eabi/include/
+	@echo "Installed!"
