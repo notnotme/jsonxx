@@ -15,8 +15,7 @@ CXX 	= $(PREFIX)-g++
 AR      = $(PREFIX)-ar
 STRIP   = $(PREFIX)-strip
 
-# Enabling -O3 here make further usage of vita-elf-create to fail. Disabled for this lib.
-CXXFLAGS += -Werror -Wall -g
+CXXFLAGS += -Werror -Wall -g -O3
 
 all: $(TARGET_LIB)
 
