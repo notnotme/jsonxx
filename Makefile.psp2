@@ -9,7 +9,7 @@ TARGET_LIB = libjsonxx.a
 
 OBJS       = jsonxx.o
 
-PREFIX  = arm-vita-eabi
+PREFIX  = $(VITASDK)/bin/arm-vita-eabi
 CC      = $(PREFIX)-gcc
 CXX 	= $(PREFIX)-g++
 AR      = $(PREFIX)-ar
